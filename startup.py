@@ -25,9 +25,9 @@ prov = input('>').lower()
 print('Thanks! Now, could you tell us a little about yourself?')
 bio = input('>')
 print('Alright! finishing up some things and then your helper will be ready!')
-info = [name, '\n', email, '\n', nick, '\n', bio, '\n', prov, '\n', '>']
+info = [name, '\n', email, '\n', nick, '\n', bio, '\n', prov, '\n']
 attfile = open('infolog.txt','w')
-attfile.writelines(info)
+attfile.writelines(info+['>'])
 sleep(3)
 print('Ready!')
 os.system('python3 interface.py')

@@ -1,6 +1,0 @@
-John Doe
-example@email.com
-JD
-I am a human and I love beans!
-email
->
