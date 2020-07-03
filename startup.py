@@ -1,6 +1,6 @@
 #file is a placeholder while other files are being made.
 from time import sleep
-
+import os
 name = ''
 email = ''
 nick = ''
@@ -29,4 +29,5 @@ info = [name, '\n', email, '\n', nick, '\n', bio, '\n', prov, '\n', '>']
 attfile = open('infolog.txt','w')
 attfile.writelines(info)
 sleep(3)
-print('Done!')
+print('Ready!')
+os.system('python3 interface.py')
