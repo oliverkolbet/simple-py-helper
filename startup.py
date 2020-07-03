@@ -8,15 +8,15 @@ bio = ''
 prov = ''
 
 print('Hello! welcome to version 1 of the python helperBot.')
-sleep(0.6)
+sleep(1.6)
 print('What is your name?')
 name = input('>')
-sleep(0.6)
+sleep(1.6)
 print('Hello, '+name+'!')
-sleep(0.7)
+sleep(1.7)
 print('What would you like me to call you?')
 nick = input('>')
-sleep(0.6)
+sleep(1.6)
 print('We need your email for our email service.')
 print('What is your email?')
 email = input('>')
@@ -25,7 +25,7 @@ prov = input('>').lower()
 print('Thanks! Now, could you tell us a little about yourself?')
 bio = input('>')
 print('Alright! finishing up some things and then your helper will be ready!')
-info = [name, '\n', email, '\n', nick, '\n', bio, '\n', prov]
+info = [name, '\n', email, '\n', nick, '\n', bio, '\n', prov, '\n', '>']
 attfile = open('infolog.txt','w')
 attfile.writelines(info)
 sleep(3)
