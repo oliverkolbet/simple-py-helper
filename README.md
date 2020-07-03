@@ -9,3 +9,7 @@ A python-based project for the command line containing many different tools
 * custom aliases for the helper **or** the shell.
 
 Made for rPi originally.
+
+
+## coming soon!!
+multiple accounts with different aliases and settings!
