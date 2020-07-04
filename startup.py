@@ -1,6 +1,6 @@
 #file is a placeholder while other files are being made.
 from time import sleep
-import os
+import subprocess
 name = ''
 email = ''
 nick = ''
@@ -25,9 +25,10 @@ prov = input('>').lower()
 print('Thanks! Now, could you tell us a little about yourself?')
 bio = input('>')
 print('Alright! finishing up some things and then your helper will be ready!')
-info = [name, '\n', email, '\n', nick, '\n', bio, '\n', prov, '\n']
+info = [name, email, nick, bio, prov, '>']
 attfile = open('infolog.txt','w')
-attfile.writelines(info+['>'])
+attfile.write('|'.join(info))
 sleep(3)
 print('Ready!')
-os.system('python3 interface.py')
+sleep(1)
+print('Now, start up the interface.py program.')

@@ -2,9 +2,10 @@ import time, random, smail, pomodoro
 from threading import Thread
 
 attfile = open('infolog.txt','r')
-att = attfile.read().split('\n')
+att = attfile.read()
+att = att.split('|')
 name = att[0]
-prompt = att[5]
+prompt = att[5].strip()
 email = att[1]
 prov = att[4]
 nick = att[2]
@@ -29,9 +30,12 @@ while True:
 	elif a[0] == 'prompt':
 		print('What do you want your prompt to be? Default is ">".')
 		prompt = input(prompt)
-		attfile = open('infolog.txt','w+')
-		att = attfile.readlines()
+		attfile = open('infolog.txt','r')
+		att = attfile.read()
+		att = att.split('|')
 		att[5] = prompt
+		attfile = open('infolog.txt','w')
+		attfile.write('|'.join(att))
 		print('Prompt is now '+prompt)
 	elif a[0] == 'timer' or a[0] == 'pomodoro':
 		timer_thread = Thread(target=pomodoro.run, args=(pomodoro.main()))

@@ -1,6 +1,1 @@
-person
-oliver.kolbet@gmail.com
-nickname
-gmail
-bio
->
+John Doe|example@example.com|JD|I am a human|email|>
