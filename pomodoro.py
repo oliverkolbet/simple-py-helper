@@ -7,6 +7,7 @@ import time, os
 def main():
 	global mlength, mbreaklen, mbreak, mendcm, mcm
 	mbreaklen = ''
+	mcm = ''
 	print('Welcome to the simple pomodoro!')
 	print('How much time do you want the timer to run for?')
 	mlength = input('=>')
@@ -28,7 +29,7 @@ def main():
 		mcm = input('=>')
 	else:
 		mendcm = False
-	run(mlength, mbreaklen, mbreak, mendcm, mcm)
+	return mlength, mbreaklen, mbreak, mendcm, mcm
 def run(length, breaklen, breakt, endcm, cm):
 	while True:
 		print('Timer starting at '+str(length)+'.')
