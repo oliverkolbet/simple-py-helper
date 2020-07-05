@@ -1,6 +1,16 @@
 import time, random, smail, pomodoro
 from threading import Thread
 
+def fileadd(text, number):
+	attfile = open('infolog.txt','r')
+	att = attfile.read()
+	att = att.split('|')
+	att[number] = text
+	attfile = open('infolog.txt','w')
+	attfile.write('|'.join(att))
+
+
+
 attfile = open('infolog.txt','r')
 att = attfile.read()
 att = att.split('|')
@@ -40,3 +50,7 @@ while True:
 	elif a[0] == 'timer' or a[0] == 'pomodoro':
 		timer_thread = Thread(target=pomodoro.run, args=(pomodoro.main()))
 		timer_thread.start()
+	elif a[0] == 'name':
+		print('What would you like your name to be?')
+		name = input(prompt)
+		fileadd(name, 0)
