@@ -27,6 +27,12 @@ while True:
 	while a == '':
 		a = input(prompt)
 	a = a.lower().split()
+	aliasfile = open('aliases.txt','r')
+	str = aliasfile.read()
+	aliases = dict(x.split(':') for x in str.split('\n'))
+	if a[0] in aliases:
+		a = aliases[a[0]]
+		a = a.lower().split()
 	if a[0] == 'email' or a[0] == 'mail':
 		print('What email address do you want to email to?')
 		eto = input(prompt)
