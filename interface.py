@@ -1,4 +1,4 @@
-import time, random, smail, pomodoro
+import time, random, smail, pomodoro, os
 from threading import Thread
 
 def fileadd(text, number):

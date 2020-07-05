@@ -10,6 +10,7 @@ A python-based project for the command line containing many different tools
 * custom pomodoro timer with command execution at finish 
 
 Made for rPi originally.
+Works on GNU/Linux
 
 
 ## coming soon!!
