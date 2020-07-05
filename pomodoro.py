@@ -11,14 +11,14 @@ def main():
 	print('Welcome to the simple pomodoro!')
 	print('How much time do you want the timer to run for?')
 	mlength = input('=>')
-	mlength = int(mlength)
+	mlength = float(mlength)
 	print('Do you want a break in between sessions?')
 	mbreak = input('=>')
 	if 'y' in mbreak.lower():
 		mbreak = True
 		print('How long do you want the break to be?')
 		mbreaklen = input('=>')
-		mbreaklen = int(mbreaklen)
+		mbreaklen = float(mbreaklen)
 	else:
 		mbreak = False
 	print('Do you want a shell command to run at the end?')
@@ -39,7 +39,7 @@ def run(length, breaklen, breakt, endcm, cm):
 			print('Shell command "'+cm+'" has been run.')
 		if breakt == True:
 			print('Time up! take a '+str(breaklen)+' minute break.')
-			sleep(60*breaklen)
+			time.sleep(60*breaklen)
 			print('Type anything or press enter to start the next session. Otherwise, type "end".')
 			ctn = input('=>')
 			if ctn.lower() != 'end' and ctn.lower() != 'quit':

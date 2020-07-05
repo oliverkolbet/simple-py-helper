@@ -23,10 +23,10 @@ bio = att[3]
 
 aliasfile = open('aliases.txt','r')
 str = aliasfile.read()
-aliases = dict(x.split(':') for x in str.split('\n'))
+aliases = dict(x.split(':') for x in str.split('|'))
 bashaliasfile = open('bashaliases.txt','r')
 bstr = bashaliasfile.read()
-bashaliases = dict(x.split(':') for x in bstr.split('\n'))
+bashaliases = dict(x.split(':') for x in bstr.split('|'))
 
 print('welcome, '+name)
 while True:
@@ -38,7 +38,7 @@ while True:
 		a = aliases[a[0]]
 		a = a.lower().split()
 	if a[0] in bashaliases:
-		os.system(bashaliases[a[0])
+		os.system(bashaliases[a[0]])
 	if a[0] == 'email' or a[0] == 'mail':
 		print('What email address do you want to email to?')
 		eto = input(prompt)
@@ -47,7 +47,6 @@ while True:
 		smail.email(att[1], epw, eto, att[2])
 	elif a[0] == 'exit' or a[0] == 'quit' or a[0] == 'leave' or a[0] == 'bye' or a[0] == 'goodbye':
 		print('Helper ended. info synced.')
-		timer_thread.stop()
 		break
 	elif a[0] == 'prompt':
 		print('What do you want your prompt to be? Default is ">".')
