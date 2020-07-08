@@ -39,7 +39,11 @@ while True:
 		a = a.lower().split()
 	if a[0] in bashaliases:
 		os.system(bashaliases[a[0]])
-	if a[0] == 'email' or a[0] == 'mail':
+	if a[0]  == alias:
+		print('What alias name would you like to create?')
+		aliname = input(prompt)
+		print('What command do you want linked to this?')
+	elif a[0] == 'email' or a[0] == 'mail':
 		print('What email address do you want to email to?')
 		eto = input(prompt)
 		print('What is your email password? (We will \u001b[4mnot\u001b[0m save this.)')
