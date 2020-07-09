@@ -28,7 +28,7 @@ bashaliasfile = open('bashaliases.txt','r')
 bstr = bashaliasfile.read()
 bashaliases = dict(x.split(':') for x in bstr.split('|'))
 
-print('welcome, '+name)
+print('Welcome, '+name)
 while True:
 	a = ''
 	while a == '':
@@ -39,7 +39,7 @@ while True:
 		a = a.lower().split()
 	if a[0] in bashaliases:
 		os.system(bashaliases[a[0]])
-	if a[0]  == alias:
+	if a[0]  == 'alias':
 		print('What alias name would you like to create?')
 		aliname = input(prompt)
 		print('What command do you want linked to this?')
@@ -48,7 +48,7 @@ while True:
 		eto = input(prompt)
 		print('What is your email password? (We will \u001b[4mnot\u001b[0m save this.)')
 		epw = input(prompt)
-		smail.email(att[1], epw, eto, att[2])
+		smail.email(email, epw, eto, prov)
 	elif a[0] == 'exit' or a[0] == 'quit' or a[0] == 'leave' or a[0] == 'bye' or a[0] == 'goodbye':
 		print('Helper ended. info synced.')
 		break
