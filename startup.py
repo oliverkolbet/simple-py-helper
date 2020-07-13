@@ -1,6 +1,6 @@
-#file is a placeholder while other files are being made.
+#file
 from time import sleep
-import subprocess
+import os
 name = ''
 email = ''
 nick = ''
@@ -26,9 +26,10 @@ print('Thanks! Now, could you tell us a little about yourself?')
 bio = input('>')
 print('Alright! finishing up some things and then your helper will be ready!')
 info = [name, email, nick, bio, prov, '>']
-attfile = open('infolog.txt','w')
-attfile.write('|'.join(info))
+os.system('echo \"'+'|'.join(info)+'\" > infolog.txt')
+#attfile = open('infolog.txt','w')
+#attfile.write('|'.join(info))
 sleep(3)
 print('Ready!')
 sleep(1)
-print('Now, start up the interface.py program.')
+os.system('python3 interface.py')
